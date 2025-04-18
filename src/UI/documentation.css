@@ -1,0 +1,45 @@
+.doc-header {
+    background-color: #007bff;
+    color: rgb(17, 6, 6);
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.doc-header h1 {
+    font-size: 2.5em;
+}
+
+main h2,
+main h3 {
+    color: #0056b3;
+}
+
+main p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+main li {
+    font-size: 1.5em;
+    line-height: 1.6;
+    margin-top: 30px;
+}
+
+code {
+    background-color: #f1f1f1;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.video-tutorial {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.signup-login-links {
+    margin: 20px 0;
+}
