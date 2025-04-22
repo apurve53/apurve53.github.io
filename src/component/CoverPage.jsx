@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { motion } from "framer-motion";
 import { FaComments, FaServer, FaLock, FaChartBar, FaMobileAlt, FaTools, FaBuilding, FaGamepad, FaCloudUploadAlt, FaDesktop, FaProjectDiagram } from "react-icons/fa";
+import GetQuery from './GetQuery.jsx';
+
 
 const ProjectContribution = () => {
     const appTypes = [
@@ -207,6 +209,7 @@ const ProjectContribution = () => {
                     </div>
                 </div>
             </div >
+            <GetQuery />
             <footer className='footer-cover-page footer-login-page'>
                 <ul>
                     <li><a href="#">Home</a></li>
