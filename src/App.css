@@ -605,12 +605,8 @@ header p {
   grid-template-columns: 70% 30%;
   grid-template-rows: auto auto;
   width: 100vw;
-  /* height: 100vh; */
   padding: 40px;
-  /* Removed padding for full-screen view */
   box-sizing: border-box;
-  /* Ensures padding doesn't affect the width/height */
-  /* overflow: auto; */
 }
 
 @keyframes textappear {
@@ -629,7 +625,6 @@ header p {
 }
 
 .textStyle {
-  grid-column: 1 / 2;
   text-align: left;
   color: #3f2b27;
   margin: 69px 0 0 0px;
@@ -643,10 +638,14 @@ header p {
   animation-timing-function: ease-in;
 }
 
+.imageContainerStyle {
+  justify-content: center;
+  align-items: center;
+}
+
 .textStyle2 {
   grid-column: 1 / span 2;
   color: #3f2b27;
-  grid-row: 1;
   font-weight: 600;
   font-size: 23px;
   margin: 10px 0 0 0;
@@ -654,19 +653,11 @@ header p {
   /* border: 1px dotted black; */
   font-family: Georgia, serif;
   line-height: 2;
-
 }
 
 .footer-cover-page {
   grid-column: 1 / span 2 !important;
   position: static !important
-}
-
-.imageContainerStyle {
-  justify-content: center;
-  align-items: center;
-  /* border: 1px solid black; */
-
 }
 
 .imageContainerStyle img {
@@ -681,8 +672,6 @@ header p {
   animation-duration: 0.50s;
   animation-timing-function: ease-in-out;
 }
-
-.finalThought {}
 
 @keyframes bounce {
   0% {
@@ -703,10 +692,43 @@ header p {
 .contribution {
   margin: 30 40px 0 30px;
   grid-column: 1 / span 2;
-  grid-row: 2 / 2;
   max-width: 100%;
   display: grid;
   grid-template-columns: 70% 30%;
+}
+
+.tech_box {
+  padding: 2rem;
+  background: linear-gradient(90deg, #be927f 6%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 1rem;
+  grid-column: 1 / span 2;
+  max-width: 100%;
+}
+
+.project-tile-wrapper {
+  grid-column: 1 / span 2;
+  width: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  gap: 2rem;
+}
+
+.final-thoughts {
+  background: #e2d9d4;
+  grid-column: span 2;
+  padding: 1.5rem;
+  border-radius: 16px;
+  /* background: linear-gradient(90deg, #eccc90, #ccac6c); */
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
+  color: #2c1f1b;
+  margin-top: 2rem;
+}
+
+.final-thoughts:hover {
+  scale: 1.02;
+  box-shadow: 12px 12px 30px rgba(211, 247, 53, 0.3);
+
 }
 
 .titleStyle {
@@ -717,8 +739,6 @@ header p {
   margin: 100px 0 0 0;
   text-align: center;
 }
-
-
 
 .listStyle {
   grid-column: 1 / span 2;
@@ -771,28 +791,14 @@ header p {
 
 }
 
-.leftForwordAnimation1 {
-  animation: leftForwordAnimation 1s linear forwards;
-  animation-timeline: view();
-  animation-range: entry 20% cover 50%;
-}
-
-@keyframes leftForwordAnimation {
-  from {
-    opacity: 0;
-    transform: scale(0);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 .listStyle span {
   align-items: center;
   justify-content: center;
   color: #000000;
+}
+
+.anim {
+  animation: titleAnim 0.5s linear forwards;
 }
 
 @keyframes titleAnim {
@@ -805,10 +811,6 @@ header p {
     opacity: 1;
     transform: translateX(0);
   }
-}
-
-.anim {
-  animation: titleAnim 0.5s linear forwards;
 }
 
 .tech_tile_box {
@@ -857,14 +859,7 @@ header p {
   border-radius: 6px;
 }
 
-.tech_box {
-  grid-column: 1 / -1;
-  padding: 2rem;
-  background: linear-gradient(90deg, #be927f 6%, rgba(0, 0, 0, 0) 100%);
-  border-radius: 1rem;
-  grid-column: 1 / span 2;
-  max-width: 100%;
-}
+
 
 
 #whatIBuild {
@@ -880,13 +875,7 @@ header p {
 }
 
 /* Wrapper that spans 2 columns of the parent grid */
-.project-tile-wrapper {
-  grid-column: span 2;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+
 
 /* Tile style */
 .project-tile {
@@ -939,21 +928,7 @@ header p {
 }
 
 /* Final thoughts block */
-.final-thoughts {
-  background: #f0d4c2;
-  padding: 1.5rem;
-  border-radius: 16px;
-  background: linear-gradient(90deg, #eccc90, #ccac6c);
-  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
-  font-weight: 500;
-  color: #2c1f1b;
-  margin-top: 2rem;
-}
 
-.final-thoughts:hover {
-  box-shadow: 12px 12px 30px rgba(211, 247, 53, 0.3);
-
-}
 
 @media (max-width:400px) {
   body {

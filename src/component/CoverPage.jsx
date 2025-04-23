@@ -23,20 +23,20 @@ const ProjectContribution = () => {
     }, [])
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
-    const getDimentions = async function () {
-        // let response = await fetch("http://worlddevelopment.in/getdimention", {
-        //     headers: {
-        //         'Accept': 'application/json',
-        //         'Content-Type': 'application/json'
-        //     },
-        //     method: "POST",
-        //     body: JSON.stringify({ widthe: screenWidth, height: screenHeight }),
-        //     credentials: 'include'
-        // })
-        // if (response.ok) {
-        //     const data = await response.json();
-        // }
-    }
+    // const getDimentions = async function () {
+    // let response = await fetch("http://worlddevelopment.in/getdimention", {
+    //     headers: {
+    //         'Accept': 'application/json',
+    //         'Content-Type': 'application/json'
+    //     },
+    //     method: "POST",
+    //     body: JSON.stringify({ widthe: screenWidth, height: screenHeight }),
+    //     credentials: 'include'
+    // })
+    // if (response.ok) {
+    //     const data = await response.json();
+    // }
+    // }
 
     let flag = true;
     const checkElementPosition = (id) => {
@@ -62,6 +62,10 @@ const ProjectContribution = () => {
     document.body.onscroll = function (evt) {
         checkElementPosition('howcani');
         checkElementPosition('whatIBuild');
+        let imgElements = document.querySelectorAll('.leftForwordAnimation1');
+        checkElementPosition('img0');
+        checkElementPosition('img1');
+        checkElementPosition('img2');
     }
 
     return (
@@ -81,6 +85,10 @@ const ProjectContribution = () => {
                 <div className='imageContainerStyle'>
                     <img className='adi' src='/images/webdeveloper.png'></img>
                 </div>
+                <div className='textStyle2'>
+                    I approach every project with a commitment to excellence, ensuring the solution aligns perfectly with the client’s vision. My independent working style and ability to manage multiple responsibilities make me a dependable choice for delivering quality work within agreed timelines.
+                    I would welcome the opportunity to discuss your project in more detail and demonstrate how I can bring it to life. Thank you for considering my application, and I look forward to collaborating with you.
+                </div>
                 <div className='contribution'>
                     <p id='howcani' className='titleStyle'>Here’s how I can contribute to your project</p>
                     <ul className='listStyle'>
@@ -93,7 +101,7 @@ const ProjectContribution = () => {
                                     I ensure all phases – <i>design, coding, testing, and deployment</i> are executed seamlessly.
                                 </p>
                             </motion.span>
-                            <img className='leftForwordAnimation1' src='/images/endtoend.png'></img>
+                            <img id='img0' src='/images/endtoend.png'></img>
                         </li>
                         <li>
                             <motion.span whileHover={{ scale: [null, 1.01, 1.05], transition: { duration: 0.5, times: [0, 0.6, 1], ease: ["easeInOut", "easeOut"], } }} transition={{ duration: 0.3, ease: "easeOut", }}>
@@ -105,7 +113,7 @@ const ProjectContribution = () => {
                                     modern tools and best practices.
                                 </p>
                             </motion.span>
-                            <img className='leftForwordAnimation1' src='/images/custsol.png'></img>
+                            <img id='img1' src='/images/custsol.png'></img>
                         </li>
                         <li>
                             <motion.span whileHover={{ scale: [null, 1.01, 1.05], transition: { duration: 0.5, times: [0, 0.6, 1], ease: ["easeInOut", "easeOut"], } }} transition={{ duration: 0.3, ease: "easeOut", }}>
@@ -116,13 +124,10 @@ const ProjectContribution = () => {
                                     Managing the complete <i>deployment process</i>, including <i>hosting, server configuration, and DNS setup.</i>
                                 </p>
                             </motion.span>
-                            <img className='leftForwordAnimation1' src='/images/deploym.png'></img>
+                            <img id='img2' src='/images/deploym.png'></img>
                         </li>
                     </ul>
-                    <div className='textStyle2'>
-                        I approach every project with a commitment to excellence, ensuring the solution aligns perfectly with the client’s vision. My independent working style and ability to manage multiple responsibilities make me a dependable choice for delivering quality work within agreed timelines.
-                        I would welcome the opportunity to discuss your project in more detail and demonstrate how I can bring it to life. Thank you for considering my application, and I look forward to collaborating with you.
-                    </div>
+
 
                 </div>
                 <div className="tech_box">
@@ -146,7 +151,7 @@ const ProjectContribution = () => {
                         ))}
                     </div>
                 </div>
-                <div className="project-tile-wrapper mt-8">
+                <div className="project-tile-wrapper">
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -196,17 +201,18 @@ const ProjectContribution = () => {
                             <strong>Impact:</strong> This project enabled businesses to stay responsive 24/7, reduce support workload, and improve customer satisfaction dramatically. The ease of use and real-time interaction gave clients a significant edge over competitors.
                         </p>
                     </motion.div>
-                    <div className="final-thoughts">
 
-                        <h2 className="text-2xl font-semibold text-[#3f2b27] mb-4">💡 Final Thoughts</h2>
-                        <p>
-                            Both of these solutions were built with a vision:
-                            <br />
-                            To simplify operations, boost productivity, and empower businesses with tools that are both powerful and easy to use.
-                            <br />
-                            <strong>I don’t just build projects — I build solutions that solve real problems and fuel growth.</strong>
-                        </p>
-                    </div>
+                </div>
+                <div className="final-thoughts">
+
+                    <h2 className="text-2xl font-semibold text-[#3f2b27] mb-4">💡 Final Thoughts</h2>
+                    <p>
+                        Both of these solutions were built with a vision:
+                        <br />
+                        To simplify operations, boost productivity, and empower businesses with tools that are both powerful and easy to use.
+                        <br />
+                        <strong>I don’t just build projects — I build solutions that solve real problems and fuel growth.</strong>
+                    </p>
                 </div>
             </div >
             <GetQuery />

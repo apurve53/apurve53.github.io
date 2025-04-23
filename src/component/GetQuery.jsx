@@ -156,7 +156,7 @@ const GetQuery = () => {
     };
 
     return (
-        <form id='getQueery' onSubmit={handleSubmit} className="form-container get_queery_container">
+        <form id='getQueery' onSubmit={handleSubmit} className="form-container">
             <div className="form-group">
                 <label htmlFor="options" className="form-label">
                     Select an Option:
