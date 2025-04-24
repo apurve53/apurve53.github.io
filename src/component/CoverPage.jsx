@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
 import { FaComments, FaServer, FaLock, FaChartBar, FaMobileAlt, FaTools, FaBuilding, FaGamepad, FaCloudUploadAlt, FaDesktop, FaProjectDiagram } from "react-icons/fa";
 import GetQuery from './GetQuery.jsx';
@@ -17,8 +17,12 @@ const ProjectContribution = () => {
         { icon: <FaCloudUploadAlt />, title: "Deployment & DevOps", desc: "Deploying applications to the cloud or VPS with CI/CD.", tech: "PM2, Nginx, GitHub Actions, AWS, Netlify" },
         { icon: <FaDesktop />, title: "In-House Server Management", desc: "Handling servers on Linux and Windows environments.", tech: "Apache, Nginx, SSH, Windows Services, Linux CLI, cron jobs, SSL/TLS (HTTPS), security enhancements" }
     ];
+    const [isOpen, setIsOpen] = useState(false);
     useEffect(() => {
-        var x = 10;
+        setTimeout(() => {
+            console.log("logging");
+            setIsOpen(true);
+        }, 1000);
         // getDimentions();
     }, [])
     const screenWidth = window.innerWidth;
@@ -62,14 +66,10 @@ const ProjectContribution = () => {
     document.body.onscroll = function (evt) {
         checkElementPosition('howcani');
         checkElementPosition('whatIBuild');
-        let imgElements = document.querySelectorAll('.leftForwordAnimation1');
-        checkElementPosition('img0');
-        checkElementPosition('img1');
-        checkElementPosition('img2');
     }
-
     return (
         <>
+            <a className={`get_query_button ${isOpen ? "open" : ""}`} href="#getQueery">Get Query</a>
             <div className='containerStyle'>
                 <div className='textStyle'>
                     I am writing to express my interest in your web development project. My name is{' '}
@@ -101,7 +101,7 @@ const ProjectContribution = () => {
                                     I ensure all phases – <i>design, coding, testing, and deployment</i> are executed seamlessly.
                                 </p>
                             </motion.span>
-                            <img id='img0' src='/images/endtoend.png'></img>
+                            <img className="imageAnim" src='/images/endtoend1.png'></img>
                         </li>
                         <li>
                             <motion.span whileHover={{ scale: [null, 1.01, 1.05], transition: { duration: 0.5, times: [0, 0.6, 1], ease: ["easeInOut", "easeOut"], } }} transition={{ duration: 0.3, ease: "easeOut", }}>
@@ -113,7 +113,7 @@ const ProjectContribution = () => {
                                     modern tools and best practices.
                                 </p>
                             </motion.span>
-                            <img id='img1' src='/images/custsol.png'></img>
+                            <img className="imageAnim" src='/images/custsol1.png'></img>
                         </li>
                         <li>
                             <motion.span whileHover={{ scale: [null, 1.01, 1.05], transition: { duration: 0.5, times: [0, 0.6, 1], ease: ["easeInOut", "easeOut"], } }} transition={{ duration: 0.3, ease: "easeOut", }}>
@@ -124,15 +124,13 @@ const ProjectContribution = () => {
                                     Managing the complete <i>deployment process</i>, including <i>hosting, server configuration, and DNS setup.</i>
                                 </p>
                             </motion.span>
-                            <img id='img2' src='/images/deploym.png'></img>
+                            <img className="imageAnim" src='/images/deploym.png'></img>
                         </li>
                     </ul>
-
-
                 </div>
                 <div className="tech_box">
-                    <h1 id="whatIBuild" className="whatIBuld">
-                        <span><FaProjectDiagram /></span><span className="">What I Build With <span className="">Node.js</span></span>
+                    <h1 id="whatIBuild">
+                        <span><FaProjectDiagram /></span><span >What I Build With <span className="">Node.js</span></span>
                     </h1>
                     <div className="tech_tile_box">
                         {appTypes.map((app, index) => (
@@ -146,7 +144,7 @@ const ProjectContribution = () => {
                                 <div>{app.icon}</div>
                                 <h2>{app.title}</h2>
                                 <p>{app.desc}</p>
-                                <p>Tech: {app.tech}</p>
+                                <p> <span className='tech'>Tech:</span> {app.tech}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -183,7 +181,7 @@ const ProjectContribution = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 3 * 0.1 }}
                         viewport={{ once: true }}
-                        className='project-tile'>
+                        className='project-tile2'>
                         <h2 className="text-3xl font-bold mb-6 text-[#3f2b27]">🤖 Project 2: Real-Time Chatbot Admin Panel – Point, Click, Automate</h2>
                         <p className="mb-4 text-[#3f2b27]">
                             In the world of fast-paced digital interaction, businesses can't afford delays in customer support.
@@ -204,18 +202,18 @@ const ProjectContribution = () => {
 
                 </div>
                 <div className="final-thoughts">
-
-                    <h2 className="text-2xl font-semibold text-[#3f2b27] mb-4">💡 Final Thoughts</h2>
-                    <p>
+                    <h1 className="text-2xl font-semibold text-[#3f2b27] mb-4">💡 Final Thoughts</h1>
+                    <h2 className='text-xl font-semibold text-[#3f2b27]'>
                         Both of these solutions were built with a vision:
-                        <br />
+                    </h2>
+                    <p>
                         To simplify operations, boost productivity, and empower businesses with tools that are both powerful and easy to use.
                         <br />
                         <strong>I don’t just build projects — I build solutions that solve real problems and fuel growth.</strong>
                     </p>
                 </div>
-            </div >
-            <GetQuery />
+                <GetQuery />
+            </div>
             <footer className='footer-cover-page footer-login-page'>
                 <ul>
                     <li><a href="#">Home</a></li>
