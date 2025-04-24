@@ -7,6 +7,8 @@ const GetQuery = () => {
         phone: '',
         // Dynamic fields will be added here
     });
+    const [ifSubmitted, setIfSubmitted] = useState(false);
+
 
     const handleOptionChange = (event) => {
         const newOption = event.target.value;
@@ -29,7 +31,7 @@ const GetQuery = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log('Form Data:', formData);
+        setIfSubmitted(true);
         fetch('https://worlddevelopment.in/add_to_google_sheet', {
             method: 'POST',
             headers: {
@@ -41,6 +43,7 @@ const GetQuery = () => {
         })
             .then((response) => {
                 if (response.ok) {
+                    setIfSubmitted(false);
                     alert('Form submitted successfully!');
                 } else {
                     alert('Error submitting form.');
@@ -156,7 +159,11 @@ const GetQuery = () => {
     };
 
     return (
+
         <form id='getQueery' onSubmit={handleSubmit} className="form-container">
+            <div className="qet_query_heading">
+                <h1 className="title">Get a Query</h1>
+            </div>
             <div className="form-group">
                 <label htmlFor="options" className="form-label">
                     Select an Option:
@@ -208,7 +215,9 @@ const GetQuery = () => {
                 disabled={!selectedOption}
                 className="form-button"
             >
-                Submit
+                {
+                    ifSubmitted ? <div className='buttonloader'></div> : <div>Submit</div>
+                }
             </button>
         </form>
     );

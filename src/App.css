@@ -27,6 +27,8 @@ body {
   border-radius: 50%;
   width: 20px;
   height: 20px;
+  text-align: center;
+  justify-self: center;
   animation: spin 1s linear infinite;
 }
 
@@ -387,7 +389,6 @@ body {
 
 .tech_tile_box>div {
   background: linear-gradient(90deg, #eccc90, #ccac6c);
-  /* background: white; */
   padding: 1.5rem;
   border-radius: 15px;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
@@ -566,5 +567,19 @@ body {
     gap: 1rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
+  }
+
+  .project-tile-wrapper {
+    width: 100%;
+    display: block;
+  }
+
+  .final-thoughts {
+    border-right: none;
+    /* border-top: 2px solid #754730; */
+  }
+
+  .project-tile {
+    border-top: 5px solid #754730;
   }
 }
